@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Calculator</title>
+    <title>Responsive Material Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="calculator">
-        <div class="brand">PREMIUM CALC</div>
-        <input type="text" id="display" readonly placeholder="0">
-        
-        <div class="buttons">
-            <button onclick="clearDisplay()" class="btn-ac">AC</button>
-            <button onclick="deleteLast()" class="btn-del">DEL</button>
-            <button onclick="appendToDisplay('/')" class="btn-op">÷</button>
-            <button onclick="appendToDisplay('*')" class="btn-op">×</button>
+    <div class="android-wrapper">
+        <div class="calculator-body">
             
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('-')" class="btn-op">-</button>
+            <input type="text" id="display" readonly placeholder="0">
             
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')" class="btn-highlight">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('+')" class="btn-op">+</button>
+            <div class="buttons-grid">
+                <button onclick="clearDisplay()" class="btn-util">C</button>
+                <button onclick="appendToDisplay('(')" class="btn-util">( )</button>
+                <button onclick="appendToDisplay('%')" class="btn-util">%</button>
+                <button onclick="appendToDisplay('/')" class="btn-op">÷</button>
+                
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('*')" class="btn-op">×</button>
+                
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('-')" class="btn-op">−</button>
+                
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('+')" class="btn-op">+</button>
+                
+                <button onclick="deleteLast()" class="btn-util">⌫</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="calculate()" class="btn-equal">=</button>
+            </div>
             
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="calculate()" class="btn-equal">=</button>
-            
-            <button onclick="appendToDisplay('0')" class="btn-zero">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
         </div>
     </div>
 
