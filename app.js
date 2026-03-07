@@ -47,8 +47,11 @@ function calculate() {
         // თუ ეკრანი ცარიელია, return (შეწყვიტე ფუნქციის მუშაობა).
         if (display.value === "") return;
         
-        // replace: პოულობს ერთ სიმბოლოს და ცვლის მეორით (რომ კომპიუტერმა გაიგოს).
-        let expression = display.value.replace('×', '*').replace('÷', '/');
+        // თავდაპირველი გამოსახულების შენახვა ისტორიისთვის
+        let originalExpr = display.value;
+
+        // replaceAll: პოულობს ყველა სიმბოლოს და ცვლის მეორით (რომ კომპიუტერმა გაიგოს).
+        let expression = display.value.replaceAll('×', '*').replaceAll('÷', '/');
         
         // eval: იღებს ტექსტს და ითვლის როგორც მათემატიკურ ფორმულას.
         let result = eval(expression);
@@ -62,6 +65,11 @@ function calculate() {
         
         // საბოლოო პასუხის გამოტანა ეკრანზე.
         display.value = result;
+        
+        // ისტორიაში ჩამატება თუ გამოსახულება შეიცავდა მოქმედებას
+        if (originalExpr !== String(result)) {
+            addToHistory(originalExpr, result);
+        }
     } 
     // catch (e): თუ try-ში შეცდომა მოხდა (მაგ: 5++), პროგრამა გადმოდის აქ.
     catch (e) {
@@ -100,3 +108,53 @@ document.addEventListener('keydown', (e) => {
         clearDisplay(); // გაასუფთაოს ეკრანი.
     }
 });
+
+/* =========================================
+   ისტორიის ფუნქციონალი (History Features)
+   ========================================= */
+
+let historyData = [];
+
+// ფანჯრის გახსნა/დახურვა
+function toggleHistory() {
+    const panel = document.getElementById('history-panel');
+    panel.classList.toggle('open');
+    renderHistory(); // ყოველ გახსნაზე განაახლოს
+}
+
+// ახალი ჩანაწერის დამატება
+function addToHistory(expr, res) {
+    // ვამატებთ სიის ბოლოში
+    historyData.push({ expression: expr, result: res });
+    renderHistory();
+}
+
+// ჩანაწერების ეკრანზე გამოტანა
+function renderHistory() {
+    const list = document.getElementById('history-content');
+    list.innerHTML = '';
+    
+    if (historyData.length === 0) {
+        list.innerHTML = '<div style="color: #666; text-align: center; margin-top: 20px; font-size: 14px;">ისტორია ცარიელია</div>';
+        return;
+    }
+
+    historyData.forEach(item => {
+        let div = document.createElement('div');
+        div.className = 'history-item';
+        div.innerHTML = `
+            <div class="history-expr">${item.expression} =</div>
+            <div class="history-res">${item.result}</div>
+        `;
+        list.appendChild(div);
+    });
+    
+    // ავტომატურად ჩასქროლოს ბოლოში
+    list.scrollTop = list.scrollHeight;
+}
+
+// ისტორიის სრულად გასუფთავება (ნაგვის ყუთის ღილაკი)
+function clearAllHistory() {
+    historyData = [];
+    renderHistory();
+}

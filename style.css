@@ -13,6 +13,16 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
+    /* თავიდან ავიცილოთ სქროლი როცა ფანჯარა მარჯვნივაა */
+}
+
+/* მთავარი კონტეინერი ორივე ფანჯრისთვის */
+.main-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* კალკულატორის გარე ყუთი */
@@ -20,10 +30,15 @@ body {
     background: #1e1e1e;
     padding: 20px;
     border-radius: 40px;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     width: 100%;
-    max-width: 360px; /* მაქსიმალური ზომა დიდ ეკრანზე */
+    min-width: 320px;
+    max-width: 360px;
+    /* მაქსიმალური ზომა დიდ ეკრანზე */
+    position: relative;
+    z-index: 10;
+    /* ყოველთვის წინა პლანზე იყოს */
 }
 
 /* შიდა ნაწილი */
@@ -56,7 +71,8 @@ body {
 
 /* ღილაკის ძირითადი სტილი */
 button {
-    aspect-ratio: 1/1; /* ღილაკი ყოველთვის კვადრატული იქნება */
+    aspect-ratio: 1/1;
+    /* ღილაკი ყოველთვის კვადრატული იქნება */
     border-radius: 20px;
     border: 2px solid transparent;
     background: #212121;
@@ -74,11 +90,19 @@ button:hover {
 }
 
 /* ფერები Android სტილში */
-.btn-util { color: #ff8a65; } /* ფუნქციური ღილაკები */
-.btn-op { color: #81c784; }   /* ოპერატორები */
-.btn-equal { 
-    background: #4caf50; 
-    color: white; 
+.btn-util {
+    color: #ff8a65;
+}
+
+/* ფუნქციური ღილაკები */
+.btn-op {
+    color: #81c784;
+}
+
+/* ოპერატორები */
+.btn-equal {
+    background: #4caf50;
+    color: white;
     font-weight: bold;
 }
 
@@ -88,14 +112,250 @@ button:hover {
         padding: 15px;
         border-radius: 25px;
     }
-    
+
     #display {
-        font-size: 40px; /* ტელეფონზე ტექსტი პატარავდება */
+        font-size: 40px;
+        /* ტელეფონზე ტექსტი პატარავდება */
         height: 80px;
     }
-    
+
     button {
         font-size: 1.2rem;
         border-radius: 15px;
+    }
+}
+
+/* --- GitHub ლინკის სტილები --- */
+.github-repo-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    /* ცოტა გამჭვირვალე შავი */
+    color: #ffffff;
+    /* თეთრი წარწერა */
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 30px;
+    /* მომრგვალებული, ლამაზი ფორმა */
+    backdrop-filter: blur(8px);
+    /* მინის ეფექტი (Glassmorphism) */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* ოდნავ შესამჩნევი ჩარჩო */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* ნაზი ჩრდილი */
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* შეხებისას რეაგირება - ცოტათი დიდდება */
+.github-repo-link:hover {
+    transform: scale(1.05) translateY(-2px);
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    /* უფრო მკვეთრი ჩრდილი */
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.github-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+/* ლოგოს ოდნავ დატრიალება მაუსის მიტანისას დამატებითი ესთეტიკისთვის */
+.github-repo-link:hover .github-icon {
+    transform: rotate(10deg);
+}
+
+.github-text {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* მობილურისთვის ცოტა დაპატარავდეს რომ არ დაიკავოს დიდი ადგილი */
+@media (max-width: 400px) {
+    .github-repo-link {
+        top: 15px;
+        right: 15px;
+        padding: 8px 14px;
+        gap: 8px;
+    }
+
+    .github-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .github-text {
+        font-size: 14px;
+    }
+}
+
+/* --- თოფ ბარი კალკულატორში --- */
+.calc-top-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.icon-btn:hover {
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    transform: scale(1.1);
+}
+
+/* --- ისტორიის ფანჯარა --- */
+.history-panel {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    right: 0;
+    width: 300px;
+    background: #1e1e1e;
+    /* კალკულატორის ფერი */
+    border-radius: 0 30px 30px 0;
+    /* მარჯვენა მხარეს მომრგვალება */
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: none;
+    z-index: 5;
+    /* კალკულატორის უკან მაგრამ დოკუმენტზე წინ */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, visibility 0s 0.5s;
+    transform: translateX(0);
+    /* საწყისი მდგომარეობა (დამალული კალკულატორის უკან) */
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 30px;
+    /* ცოტა სივრცე მარცხნივ რადგან კალკულატორი ფარავს ცოტათი */
+}
+
+/* როცა გახსნილია, გამოწეულია მარჯვნივ სრულად + ცოტა დაშორება */
+.history-panel.open {
+    transform: translateX(calc(100% - 20px));
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, visibility 0s 0s;
+}
+
+.history-header {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.history-header h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.history-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-end;
+    /* ტექსტი მარჯვნივ იყოს */
+}
+
+/* სქროლბარის დიზაინი ისტორიისთვის */
+.history-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.history-item {
+    text-align: right;
+    width: 100%;
+    animation: fadeIn 0.3s ease;
+}
+
+.history-expr {
+    color: #a0a0a0;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.history-res {
+    color: #4caf50;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.history-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trash-btn {
+    color: #ff5252;
+}
+
+.trash-btn:hover {
+    color: #ff1744;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+
+    /* მობილურზე რომ ორივე დაეტიოს აბსურდია, ამიტომ კალკულატორს ზემოდან გადაეფარება ან ზევით აიწევს, თუმცა გავაკეთოთ სრულ ეკრანზე ზემოდან დაფარება */
+    .history-panel {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 40px;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 20;
+        /* მობილურზე წინ გადმოვიდეს */
+        padding: 25px;
+    }
+
+    .history-panel.open {
+        transform: translateX(0);
+        /* პირდაპირ ზემოდან ედება */
     }
 }
