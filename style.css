@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0d0221;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    background-color: #1a0f2e;
+    padding: 30px;
+    border-radius: 40px;
+    width: 350px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.brand {
+    text-align: center;
+    color: #5a4b7a;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+#display {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #a5a5a5;
+    font-size: 55px;
+    text-align: right;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 0 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    height: 70px;
+    border-radius: 20px;
+    border: 2px solid transparent; /* თავიდან ჩარჩო უხილავია */
+    background-color: #2d1b4d;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s all ease;
+}
+
+/* ეფექტი ნებისმიერ ღილაკზე მაუსის მიტანისას */
+button:hover {
+    background-color: #3d2a5e;
+    border: 2px solid white; /* თეთრი ჩარჩო ჩნდება აქ */
+    transform: translateY(-2px);
+}
+
+.btn-ac { color: #f28500; font-weight: bold; }
+.btn-del { color: #d81159; font-weight: bold; }
+.btn-op { color: #d81159; font-size: 24px; }
+
+.btn-equal {
+    background: linear-gradient(180deg, #9b1b74 0%, #720e50 100%);
+    grid-row: span 2;
+    height: 152px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
