@@ -4,6 +4,8 @@
 
 # 🇬🇪 ქართული ვერსია
 
+🌐 **English version available below ⬇️**
+
 ეს არის ინტერაქტიული ვებ-კალკულატორი, რომელიც მომხმარებელს საშუალებას აძლევს სწრაფად და მარტივად შეასრულოს ძირითადი მათემატიკური ოპერაციები.
 
 პროექტი შექმნილია იმისათვის, რომ დამწყებმა დეველოპერებმა ისწავლონ **JavaScript-ის გამოყენება და ვებ-ინტერაქტიულობა**.
@@ -61,6 +63,8 @@ GitHub: https://github.com/L0mta
 ---
 
 # 🇬🇧 English Version
+
+🌐 **ქართული ვერსია ზემოთ ⬆️**
 
 This is an interactive web calculator that allows users to quickly and easily perform basic mathematical operations.
 
