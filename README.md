@@ -1,4 +1,4 @@
-# Calculator - სრული ვიზუალური პროექტი
+# Calculator - ფუნქციალური კალკულატორი
 
 ეს არის ინტერაქტიული ვებ-კალკულატორი, რომელიც მომხმარებელს საშუალებას აძლევს სწრაფად და მარტივად შეასრულოს ძირითადი მათემატიკური ოპერაციები.
 
@@ -34,13 +34,13 @@
 
 ---
 
-## 👥 გუნდი (Owners)
+## 👥 გუნდი წევრები
 
 საიტის მართვასა და განვითარებაზე ზრუნავენ:
 
-* 🔴 **NIKA_GEIMS** – *CEO & Project Founder*
-* 🟠 **NIKMAX** – *Dizainer Manager*
-* 💎 **MIKLAND** – *Developer & Manager*
-* 🔵 **LOMTA** – *Developer & Support*
+* 🔴 **NIKA_GEIMS** – *CEO & Project Founder* Github Link (https://github.com/nikageims)
+* 🟠 **NIKMAX** – *Dizainer Manager* Github Link (https://github.com/NikMax29)
+* 💎 **MIKLAND** – *Developer & Manager* Github Link (https://github.com/mikland11)
+* 🔵 **LOMTA** – *Developer & Support* Github Link (https://github.com/L0mta)
 ---
 © 2026 Interactive Development Presentation
