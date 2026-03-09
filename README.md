@@ -1,4 +1,8 @@
-# Calculator - ფუნქციალური კალკულატორი
+# Calculator - ფუნქციალური ვებ კალკულატორი / Functional Web Calculator
+
+---
+
+# 🇬🇪 ქართული ვერსია
 
 ეს არის ინტერაქტიული ვებ-კალკულატორი, რომელიც მომხმარებელს საშუალებას აძლევს სწრაფად და მარტივად შეასრულოს ძირითადი მათემატიკური ოპერაციები.
 
@@ -6,41 +10,112 @@
 
 ## 🚀 ცოცხალი დემო
 შეგიძლიათ იხილოთ საიტი აქ:  
-[Calculator Demo](https://calculator-share.netlify.app/)
+👉 https://calculator-share.netlify.app/
 
 ## ✨ პროექტის მახასიათებლები
-- **მარტივი დიზაინი:** სუფთა და თანამედროვე ინტერფეისი  
-- **ინტერაქტიული ღილაკები:** თითოეული ღილაკი რეაგირებს დაჭერაზე  
-- **სწრაფი გამოთვლა:** შედეგი მყისიერად ჩანს ეკრანზე  
-- **მარტივი გამოყენება:** დამწყებთათვის ადვილად გასაგები
+
+- **მარტივი დიზაინი** – სუფთა და თანამედროვე ინტერფეისი  
+- **ინტერაქტიული ღილაკები** – თითოეული ღილაკი რეაგირებს დაჭერაზე  
+- **სწრაფი გამოთვლა** – შედეგი მყისიერად ჩანს ეკრანზე  
+- **მარტივი გამოყენება** – დამწყებთათვის ადვილად გასაგები  
 
 ## 🛠️ კალკულატორის ფუნქციები
-1. **Addition (+)** – რიცხვების დამატება  
-2. **Subtraction (-)** – რიცხვების გამოკლება  
-3. **Multiplication (×)** – გამრავლება  
-4. **Division (÷)** – გაყოფა  
-5. **Clear (C)** – ეკრანის გასუფთავება  
-6. **Equals (=)** – საბოლოო პასუხის გამოთვლა  
+
+- **Addition (+)** – რიცხვების დამატება  
+- **Subtraction (-)** – რიცხვების გამოკლება  
+- **Multiplication (×)** – გამრავლება  
+- **Division (÷)** – გაყოფა  
+- **Clear (C)** – ეკრანის გასუფთავება  
+- **Equals (=)** – საბოლოო პასუხის გამოთვლა  
 
 ## 💻 გამოყენებული ტექნოლოგიები
-* **HTML5** - ვებ-გვერდის სტრუქტურისთვის  
-* **CSS3** - დიზაინისა და ფორმატირებისთვის  
-* **JavaScript** - კალკულატორის ლოგიკისთვის  
+
+- **HTML5** – ვებ გვერდის სტრუქტურა  
+- **CSS3** – დიზაინი და სტილები  
+- **JavaScript** – კალკულატორის ლოგიკა  
 
 ## 📂 ფაილების სტრუქტურა
-* `index.html` - მთავარი გვერდი  
-* `style.css` - დიზაინი  
-* `script.js` - კალკულატორის ფუნქციები  
+
+```
+calculator/
+│
+├── index.html
+├── style.css
+└── script.js
+```
+
+## 👥 გუნდის წევრები
+
+🔴 **NIKA_GEIMS** – CEO & Project Founder  
+GitHub: https://github.com/nikageims  
+
+🟠 **NIKMAX** – Design Manager  
+GitHub: https://github.com/NikMax29  
+
+💎 **MIKLAND** – Developer & Manager  
+GitHub: https://github.com/mikland11  
+
+🔵 **LOMTA** – Developer & Support  
+GitHub: https://github.com/L0mta  
 
 ---
 
-## 👥 გუნდი წევრები
+# 🇬🇧 English Version
 
-საიტის მართვასა და განვითარებაზე ზრუნავენ:
+This is an interactive web calculator that allows users to quickly and easily perform basic mathematical operations.
 
-* 🔴 **NIKA_GEIMS** – *CEO & Project Founder* Github Link (https://github.com/nikageims)
-* 🟠 **NIKMAX** – *Dizainer Manager* Github Link (https://github.com/NikMax29)
-* 💎 **MIKLAND** – *Developer & Manager* Github Link (https://github.com/mikland11)
-* 🔵 **LOMTA** – *Developer & Support* Github Link (https://github.com/L0mta)
+The project was created to help beginner developers learn **JavaScript and web interactivity**.
+
+## 🚀 Live Demo
+You can view the website here:  
+👉 https://calculator-share.netlify.app/
+
+## ✨ Project Features
+
+- **Simple Design** – Clean and modern interface  
+- **Interactive Buttons** – Each button responds when clicked  
+- **Fast Calculation** – Results appear instantly on the screen  
+- **Easy to Use** – Simple and beginner-friendly  
+
+## 🛠️ Calculator Functions
+
+- **Addition (+)** – Add numbers  
+- **Subtraction (-)** – Subtract numbers  
+- **Multiplication (×)** – Multiply numbers  
+- **Division (÷)** – Divide numbers  
+- **Clear (C)** – Clear the screen  
+- **Equals (=)** – Calculate the final result  
+
+## 💻 Technologies Used
+
+- **HTML5** – Website structure  
+- **CSS3** – Styling and layout  
+- **JavaScript** – Calculator logic and functionality  
+
+## 📂 File Structure
+
+```
+calculator/
+│
+├── index.html
+├── style.css
+└── script.js
+```
+
+## 👥 Team Members
+
+🔴 **NIKA_GEIMS** – CEO & Project Founder  
+GitHub: https://github.com/nikageims  
+
+🟠 **NIKMAX** – Design Manager  
+GitHub: https://github.com/NikMax29  
+
+💎 **MIKLAND** – Developer & Manager  
+GitHub: https://github.com/mikland11  
+
+🔵 **LOMTA** – Developer & Support  
+GitHub: https://github.com/L0mta  
+
 ---
+
 © 2026 Interactive Development Presentation
